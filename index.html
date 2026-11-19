@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#f5f5f7">
+  <title>BA Workstyle Lab</title>
+  <style>
+    :root{--ink:#1d1d1f;--muted:#6e6e73;--blue:#0071e3;--bg:#f5f5f7;--card:rgba(255,255,255,.86);--line:rgba(0,0,0,.08);--shadow:0 18px 50px rgba(0,0,0,.08);--radius:28px}
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:radial-gradient(circle at 90% 0,#e7f2ff 0,transparent 32%),var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;min-height:100vh}
+    button,input{font:inherit} button{cursor:pointer} .shell{width:min(1080px,calc(100% - 32px));margin:auto;padding:28px 0 90px}.topbar{display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{font-size:17px;font-weight:700;letter-spacing:-.02em}.pill{font-size:12px;letter-spacing:.08em;color:var(--muted);text-transform:uppercase}.hero{padding:9vh 0 54px;max-width:820px}.eyebrow{font-size:13px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--blue)}h1{font-size:clamp(44px,8vw,82px);letter-spacing:-.065em;line-height:.95;margin:18px 0 24px}.lead{font-size:clamp(18px,2.4vw,25px);line-height:1.45;color:var(--muted);max-width:680px;margin:0}.section-title{font-size:28px;letter-spacing:-.035em;margin:0 0 8px}.section-copy{color:var(--muted);margin:0 0 24px;line-height:1.6}.people{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.person,.option,.action-card,.metric,.team-card{border:1px solid var(--line);background:var(--card);backdrop-filter:blur(16px);box-shadow:0 6px 24px rgba(0,0,0,.035)}.person{min-height:145px;border-radius:24px;padding:22px;text-align:left;transition:.2s transform,.2s box-shadow,.2s border}.person:hover,.person:focus-visible{transform:translateY(-3px);box-shadow:var(--shadow);border-color:rgba(0,113,227,.35);outline:none}.avatar{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#dcecff,#f1e8ff);font-weight:750;font-size:20px}.person-name{font-size:22px;font-weight:720;margin:16px 0 4px}.person-state{font-size:13px;color:var(--muted)}.note{margin-top:18px;font-size:13px;color:var(--muted)}.hidden{display:none!important}.panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(22px,4vw,46px);box-shadow:var(--shadow)}.quiz-head{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:24px}.back{border:0;background:transparent;color:var(--blue);padding:8px 0}.progress-track{height:5px;background:#e5e5ea;border-radius:9px;overflow:hidden;margin:0 0 34px}.progress-fill{height:100%;background:var(--blue);transition:.25s width}.question-no{font-size:13px;color:var(--muted);font-weight:700;letter-spacing:.07em}.question-title{font-size:clamp(25px,4vw,38px);line-height:1.18;letter-spacing:-.035em;margin:12px 0 26px;max-width:850px}.theory{border-radius:22px;padding:22px;background:linear-gradient(135deg,#eef6ff,#f6f2ff);margin:0 0 20px}.theory-title{font-size:18px;font-weight:750;margin-bottom:10px}.theory-copy{margin:0 0 12px;color:#33475b;line-height:1.65;font-size:15px}.theory-context{margin:14px 0 0;padding-top:14px;border-top:1px solid rgba(49,91,131,.14);color:#52677b;line-height:1.6;font-size:14px}.theory-label{font-weight:750;color:#315b83}.diagram{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:7px}.diagram span{padding:12px 8px;text-align:center;border-radius:12px;background:rgba(255,255,255,.8);font-size:13px;color:#315b83}.options{display:grid;gap:12px}.option{border-radius:19px;padding:18px 20px;text-align:left;color:var(--ink);line-height:1.5;transition:.18s}.option:hover{border-color:rgba(0,113,227,.35);transform:translateY(-1px)}.option.selected{background:#e9f3ff;border-color:var(--blue);box-shadow:0 0 0 1px var(--blue)}.quiz-actions{display:flex;justify-content:space-between;gap:12px;margin-top:28px}.btn{border:0;border-radius:999px;padding:13px 22px;font-weight:680;transition:.18s}.btn:disabled{opacity:.35;cursor:not-allowed}.btn-primary{background:var(--blue);color:white}.btn-primary:hover:not(:disabled){background:#0077ed}.btn-secondary{background:#e8e8ed;color:var(--ink)}.btn-ghost{background:white;border:1px solid var(--line)}.result-hero{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:center}.type-badge{display:inline-flex;padding:8px 12px;border-radius:999px;background:#eaf4ff;color:#0066cc;font-size:13px;font-weight:700}.result-title{font-size:clamp(38px,6vw,66px);letter-spacing:-.055em;line-height:1;margin:18px 0}.result-sub{font-size:18px;line-height:1.6;color:var(--muted)}.radar{display:grid;gap:12px}.score-row{display:grid;grid-template-columns:90px 1fr 24px;gap:10px;align-items:center;font-size:13px}.bar{height:9px;border-radius:10px;background:#ececf0;overflow:hidden}.bar i{display:block;height:100%;background:linear-gradient(90deg,#0071e3,#7bb7ff);border-radius:10px}.insights{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:30px}.insight{background:#f7f7fa;border-radius:20px;padding:20px}.insight h3{font-size:15px;margin:0 0 9px}.insight p{color:var(--muted);line-height:1.55;margin:0;font-size:14px}.result-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}.dashboard-title{font-size:clamp(36px,6vw,60px);letter-spacing:-.05em;margin:14px 0 10px}.dashboard-head{display:flex;justify-content:space-between;align-items:flex-start;gap:20px}.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:28px 0}.metric{border-radius:22px;padding:22px}.metric strong{font-size:38px;letter-spacing:-.04em}.metric span{display:block;color:var(--muted);font-size:13px;margin-top:5px}.quick-actions{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.action-card{border-radius:24px;padding:24px;text-align:left;min-height:150px;transition:.2s}.action-card:hover{transform:translateY(-2px);box-shadow:var(--shadow)}.action-card .icon{font-size:23px}.action-card h3{margin:20px 0 5px;font-size:19px}.action-card p{margin:0;color:var(--muted);font-size:13px;line-height:1.45}.team-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.team-card{border-radius:22px;padding:20px}.team-top{display:flex;justify-content:space-between;align-items:center}.status{font-size:12px;padding:6px 9px;border-radius:999px;background:#eee;color:var(--muted)}.status.done{background:#e6f7ed;color:#247a45}.mini-scores{display:grid;grid-template-columns:repeat(5,1fr);gap:5px;margin-top:15px}.mini-scores span{height:35px;background:#edf4fb;border-radius:8px;display:flex;align-items:flex-end;justify-content:center;font-size:10px;padding-bottom:4px;color:#49627b}.challenge{background:linear-gradient(145deg,#151517,#323238);color:white;border-radius:28px;padding:clamp(24px,5vw,50px)}.challenge .eyebrow{color:#72b7ff}.challenge h2{font-size:clamp(32px,5vw,52px);margin:14px 0 20px;letter-spacing:-.045em}.challenge p{color:#c8c8ce;line-height:1.6}.pair{display:flex;gap:10px;flex-wrap:wrap;margin:24px 0}.pair span{background:rgba(255,255,255,.12);padding:9px 13px;border-radius:999px}.version{position:fixed;right:max(16px,env(safe-area-inset-right));bottom:max(12px,env(safe-area-inset-bottom));border:0;background:transparent;color:rgba(110,110,115,.55);font-size:11px;padding:8px;user-select:none;z-index:5}.modal-wrap{position:fixed;inset:0;background:rgba(0,0,0,.35);display:grid;place-items:center;padding:20px;z-index:20;backdrop-filter:blur(12px)}.modal{width:min(420px,100%);background:#fff;border-radius:26px;padding:28px;box-shadow:0 30px 90px rgba(0,0,0,.25)}.modal h2{margin:0 0 8px;font-size:28px;letter-spacing:-.035em}.modal p{margin:0 0 18px;color:var(--muted);font-size:14px;line-height:1.5}.modal input{width:100%;border:1px solid #d2d2d7;border-radius:14px;padding:13px 15px;outline:none}.modal input:focus{border-color:var(--blue);box-shadow:0 0 0 4px rgba(0,113,227,.12)}.error{min-height:20px;color:#c9342c;font-size:13px;margin:9px 0}.modal-actions{display:flex;justify-content:flex-end;gap:9px}.security-note{margin-top:20px;padding:14px;border-radius:14px;background:#fff7e8;color:#74531c;font-size:12px;line-height:1.5}.toast{position:fixed;left:50%;bottom:34px;transform:translate(-50%,20px);background:#1d1d1f;color:white;padding:11px 16px;border-radius:999px;opacity:0;pointer-events:none;transition:.25s;z-index:30;font-size:13px}.toast.show{opacity:1;transform:translate(-50%,0)}
+    @media(max-width:760px){.shell{width:min(100% - 22px,1080px);padding-top:18px}.hero{padding-top:8vh}.people{grid-template-columns:repeat(2,1fr)}.person{min-height:126px}.result-hero,.insights{grid-template-columns:1fr}.metrics{grid-template-columns:repeat(3,1fr)}.metric{padding:16px}.metric strong{font-size:30px}.quick-actions,.team-grid{grid-template-columns:1fr}.dashboard-head{display:block}.dashboard-head .btn{margin-top:12px}.diagram{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:430px){.people{grid-template-columns:1fr 1fr}.person{padding:17px}.person-name{font-size:19px}.panel{border-radius:22px}.metrics{gap:7px}.metric{padding:13px 9px}.metric strong{font-size:27px}.score-row{grid-template-columns:74px 1fr 20px}.quiz-actions .btn{padding:12px 18px}}
+    .btn-danger{color:#a92323;border-color:#e9b9b9}
+    .btn-danger:hover{background:#fff0f0}
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar"><div class="brand">BA Workstyle Lab</div><div class="pill">Workshop 2026</div></header>
+
+    <section id="homeView">
+      <div class="hero"><div class="eyebrow">Discover your BA style</div><h1>看见自己的工作方式。</h1><p class="lead">15 个保险系统 BA 的真实场景，帮助你理解自己的优先选择，也看见团队里不同风格的价值。</p></div>
+      <h2 class="section-title">选择你的姓名</h2><p class="section-copy">作答约需 8–12 分钟。请选择最接近第一反应的行动，而不是“标准答案”。</p>
+      <div class="people" id="peopleGrid"></div>
+      <p class="note">结果仅用于团队学习与讨论，不是心理测量或能力评价。</p>
+    </section>
+
+    <section id="quizView" class="hidden panel">
+      <div class="quiz-head"><button class="back" id="quizHome">← 暂存并返回</button><strong id="quizPerson"></strong></div>
+      <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+      <div class="question-no" id="questionNo"></div><h2 class="question-title" id="questionTitle"></h2><div id="theoryBox"></div><div class="options" id="options"></div>
+      <div class="quiz-actions"><button class="btn btn-secondary" id="prevBtn">上一题</button><button class="btn btn-primary" id="nextBtn" disabled>下一题</button></div>
+    </section>
+
+    <section id="resultView" class="hidden panel"></section>
+    <section id="teamView" class="hidden panel"></section>
+    <section id="challengeView" class="hidden"></section>
+    <section id="hostView" class="hidden panel"></section>
+  </main>
+
+  <button id="versionTrigger" class="version" aria-label="版本信息">v1.4</button>
+  <div id="codeModal" class="modal-wrap hidden" role="dialog" aria-modal="true" aria-labelledby="codeTitle">
+    <form class="modal" id="codeForm"><h2 id="codeTitle">输入暗号</h2><p>这是活动主持人的快捷入口。</p><input id="codeInput" type="password" autocomplete="off" placeholder="暗号" aria-label="暗号"><div class="error" id="codeError"></div><div class="modal-actions"><button type="button" class="btn btn-secondary" id="cancelCode">取消</button><button class="btn btn-primary">验证</button></div><div class="security-note">此暗号只用于隐藏前端入口，并不是真正的安全认证。公开部署时应通过服务端权限和数据库规则保护主持功能。</div></form>
+  </div>
+  <div class="toast" id="toast"></div>
+
+  <script>
+  (()=>{
+    const PEOPLE=['史','甄','杜','张','李','万'];
+    const TYPES={
+      A:{name:'逻辑侦探型',short:'逻辑',tag:'The Analyst',mbti:'INTJ / INTP',strength:'拆解复杂规则、发现矛盾、追溯根因',blind:'可能为了完整分析而延迟决定',advice:'给出关键结论和判断时限，让分析更易转化为行动。'},
+      B:{name:'风险守护型',short:'风险',tag:'The Guardian',mbti:'ISTJ / ISFJ',strength:'识别边界、保障质量、守住合规底线',blind:'面对不确定性时可能过度谨慎',advice:'区分必须规避与可控风险，为探索预留安全空间。'},
+      C:{name:'共识连接型',short:'共识',tag:'The Connector',mbti:'ENFJ / ESFJ',strength:'理解立场、促进沟通、建立协作信任',blind:'可能为了和谐而弱化关键分歧',advice:'把分歧写成待决定的问题，让共识建立在清晰事实之上。'},
+      D:{name:'交付推进型',short:'推进',tag:'The Driver',mbti:'ENTJ / ESTJ',strength:'明确优先级、推动决策、突破阻塞',blind:'快速推进时可能遗漏细节和顾虑',advice:'在决定前设置一次风险复核，让速度与质量相互增强。'},
+      E:{name:'创新探索型',short:'探索',tag:'The Explorer',mbti:'ENTP / ENFP',strength:'提出替代方案、改善流程、发现机会',blind:'可能低估落地成本与实施约束',advice:'用小规模试点验证想法，并提前定义停止条件。'}
+    };
+    const Q=[
+      ['新规则和旧系统对不上，可上线日期已经定了。遇到这种情况，你会先关注什么？',[['先把新旧规则放在一起，找出真正不一致的地方','A','B'],['先判断如果按计划上线，可能带来多大影响','B','A'],['先请相关的人说说各自的理解，看看分歧在哪里','C','D'],['先明确今天要决定什么，以及由谁继续处理','D','C'],['先找一个小范围的做法，验证新规则能不能走通','E','A']]],
+      ['客户希望系统“更好用”，但一时说不出具体要改什么。你会从哪里开始？',[['先看看现有流程，找出最费时间、最容易出错的地方','A','B'],['先听一线使用者讲讲，他们平时最不方便的是什么','C','A'],['先说清楚这次改善最想改变哪一件事','D','A'],['先做出两个简单方案，让客户看到后再谈感受','E','C'],['先确认哪些信息可以使用，哪些边界不能碰','B','A']]],
+      ['同一句需求，客户和开发人员听出了完全不同的意思。你会怎样把讨论继续下去？',[['回到具体条件和例子，一点点找出理解不同的地方','A','C'],['请双方先听懂对方在担心什么，再谈共同目标','C','A'],['把两种理解可能带来的问题分别写下来','B','A'],['给讨论设一个时间点，到时必须确定下一步','D','C'],['用简单画面或实际场景来说明，少一些抽象文字','E','C']]],
+      ['用户验收时发现了一个严重问题，但上线日期很难改变。此时你更在意什么？',[['先弄清问题在什么情况下发生，会影响到哪些人','A','B'],['先确认风险是否已经说清楚，是否真的可以接受','B','D'],['让业务、测试和开发一起确认大家能接受的做法','C','B'],['尽快组织决定：修复、缩小范围，还是推迟上线','D','B'],['看看能否先开放一小部分，把影响控制在有限范围','E','B']]],
+      ['一个需求不断增加小改动，慢慢变得看不清全貌。你通常会先做什么？',[['重新整理需求，把彼此关联的部分放回同一张图里','A','D'],['逐项看看这些改动有没有留下风险或遗漏','B','A'],['再问一次：最初想解决的问题，现在有没有变化','C','A'],['先停下不重要的改动，重新安排要完成的范围','D','B'],['看看变化最多的部分，是否能改成更灵活的设置','E','A']]],
+      ['合作部门总是在最后一刻才提出意见。你会怎样面对这件事？',[['先了解意见为什么总是来得晚，问题出在哪个环节','A','D'],['把确认时间提前，并约定每个阶段要检查什么','B','D'],['单独和他们聊一聊，了解他们参与上的难处','C','D'],['把截止时间和延迟的影响说清楚，方便大家安排','D','C'],['换一种更轻松的反馈方式，让他们更容易参与','E','C']]],
+      ['系统偶尔出错，却一直找不到稳定的发生规律。你的第一步会是什么？',[['把时间、用户和操作记录放在一起，寻找共同点','A','B'],['先确认影响到谁，以及目前可以怎样减少损失','B','D'],['先让相关团队保持信息同步，避免各自重复排查','C','D'],['明确谁负责排查，以及什么时候更新一次情况','D','B'],['设计几个小测试，逐步排除不同的可能原因','E','A']]],
+      ['两位资深同事坚持不同方案，其他人渐渐不再发言。你会怎样处理？',[['把两种方案背后的判断依据列出来，再看哪些可以验证','A','C'],['先请他们说说，自己最担心发生的事情是什么','B','C'],['让每个人都有机会表达，再整理共同点和分歧','C','A'],['约定判断标准和时间，请负责人作出决定','D','A'],['从两种思路中各取一部分，先做一次小范围尝试','E','A']]],
+      ['项目只剩两周，却突然来了一个“必须完成”的新需求。你会怎么回应？',[['先估算它会影响哪些工作，再说明整体变化','A','D'],['先比较：不做的风险是什么，仓促完成又有什么风险','B','D'],['请提出需求的人和执行团队一起讨论取舍','C','D'],['请负责人明确优先顺序；增加一项，也要减少一项','D','B'],['寻找一个更小的做法，先满足最重要的需要','E','D']]],
+      ['团队经常重复制作内容相近的需求文档。你觉得最值得先做什么？',[['整理重复和不同的部分，看看哪些内容可以共用','A','E'],['先确认统一模板会不会让重要内容被忽略','B','A'],['请经常使用文档的人一起设计一个更顺手的版本','C','E'],['确定负责人和日期，先把第一个统一版本做出来','D','E'],['尝试让工具先生成草稿，再由 BA 检查和修改','E','A']]],
+      ['客户突然否定了一个已经确认很久的方案。你最想先弄清什么？',[['是什么新信息，让原来的判断发生了变化','A','C'],['这次改变会影响哪些已经完成或正在进行的工作','B','A'],['客户真正不放心的是什么，为什么现在才提出','C','A'],['这次改变何时确定，接下来由谁负责处理','D','C'],['已有成果里有哪些还能保留，不必全部重来','E','D']]],
+      ['同一条业务规则，在三份文档里写得都不一样。你会先怎么做？',[['把三种写法放在一起，查清来源和适用情况','A','B'],['先提醒相关人员暂停确认，避免错误继续传下去','B','A'],['请真正负责这条规则的人一起确认统一说法','C','A'],['确定一份正式来源，并安排时间完成整理','D','B'],['建立一个简单的规则清单，以后只维护一个地方','E','A']]],
+      ['客户希望按时上线，测试负责人认为应该延期。借用 Thomas–Kilmann 冲突处理模型，你更接近哪种反应？',[['先回到事实，寻找双方都能够接受的解决办法','A','C'],['如果风险还没说清楚，我会先守住质量底线','B','D'],['先让双方完整说出各自的需要，再一起寻找答案','C','A'],['时间有限，需要由明确的负责人尽快作出决定','D','B'],['寻找一个可以回退的办法，例如分阶段开放','E','B']],'tk'],
+      ['面对一种全新的保险产品，几乎没有过去的经验可以参考。借用 Cynefin 框架，你会怎样开始？',[['先分清已经知道什么，还有哪些问题没有答案','A','E'],['先确定不能越过的边界，再考虑可以尝试的空间','B','E'],['持续听取客户和一线人员的反馈，边走边调整','C','E'],['把事情分成几个短阶段，每次都明确是否继续','D','B'],['先做几次小规模尝试，从实际反馈中寻找方向','E','A']],'cynefin'],
+      ['团队想用 AI 帮助制作需求文档。借用“双钻”方法，你最想先推动哪一步？',[['先了解目前的工作方式，确认真正需要改善的问题','A','C'],['先明确使用范围、判断标准，以及不能触碰的边界','B','A'],['邀请实际使用的人参与讨论，一起选择方向','C','E'],['确定一个小型试点，安排负责人和检查时间','D','B'],['先提出几种不同做法，再通过尝试比较效果','E','A']],'diamond']
+    ];
+    const $=s=>document.querySelector(s), views=['homeView','quizView','resultView','teamView','challengeView','hostView'];
+    let person=null,index=0,answers=[],hostUnlocked=sessionStorage.getItem('ba-host')==='1',clicks=[];
+    const answerStorageKey='ba-workstyle-v12';
+    const load=()=>JSON.parse(localStorage.getItem(answerStorageKey)||'{}');
+    const saveAll=d=>localStorage.setItem(answerStorageKey,JSON.stringify(d));
+    const show=id=>{views.forEach(v=>$('#'+v).classList.toggle('hidden',v!==id));scrollTo({top:0,behavior:'smooth'})};
+    const toast=m=>{const t=$('#toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1700)};
+    function statusFor(n){const d=load()[n];if(d?.result)return '已完成';if(d?.answers?.some(Boolean))return '继续作答';return '尚未开始'}
+    function renderHome(){const grid=$('#peopleGrid');grid.innerHTML='';PEOPLE.forEach(n=>{const b=document.createElement('button');b.className='person';b.innerHTML=`<span class="avatar">${n}</span><div class="person-name">${n}</div><div class="person-state">${statusFor(n)}</div>`;b.onclick=()=>startQuiz(n);grid.appendChild(b)});show('homeView')}
+    function startQuiz(n){person=n;const d=load()[n]||{};answers=d.answers||Array(Q.length).fill(null);index=Math.max(0,answers.findIndex(x=>!x));if(index<0)index=Q.length-1;renderQuestion();show('quizView')}
+    function persist(){const all=load();all[person]={...(all[person]||{}),answers,updatedAt:Date.now()};saveAll(all)}
+    function renderQuestion(){const q=Q[index];$('#quizPerson').textContent=person+' · 我的答题';$('#questionNo').textContent=`QUESTION ${String(index+1).padStart(2,'0')} / ${Q.length}`;$('#questionTitle').textContent=q[0];$('#progressFill').style.width=((index+1)/Q.length*100)+'%';$('#prevBtn').disabled=index===0;$('#nextBtn').textContent=index===Q.length-1?'查看我的结果':'下一题';$('#nextBtn').disabled=answers[index]==null;renderTheory(q[2]);const box=$('#options');box.innerHTML='';q[1].forEach((o,i)=>{const b=document.createElement('button');b.className='option'+(answers[index]===i?' selected':'');b.textContent=o[0];b.onclick=()=>{answers[index]=i;persist();renderQuestion()};box.appendChild(b)})}
+    function renderTheory(kind){
+      const el=$('#theoryBox');
+      if(!kind){el.innerHTML='';return}
+      const theories={
+        tk:{
+          title:'Thomas–Kilmann 冲突处理模型（TKI）',
+          meaning:'这个模型用两个维度理解冲突反应：一是坚持自己立场的程度，二是满足对方关切的程度。两者组合成竞争、合作、妥协、回避和迁就五种方式。它们不是优劣排名；关键是根据风险、时间和关系选择合适方式。',
+          background:'由 Kenneth W. Thomas 与 Ralph H. Kilmann 在 20 世纪 70 年代提出，常用于团队协作、谈判和冲突管理。',
+          application:'本题的核心不是判断“上线”或“延期”谁正确，而是观察你面对目标冲突时，通常怎样平衡立场、风险与合作。',
+          stages:['竞争：坚持立场','合作：兼顾双方','妥协：各让一步','回避：暂缓处理','迁就：优先对方']
+        },
+        cynefin:{
+          title:'Cynefin 框架',
+          meaning:'Cynefin 是一个帮助判断“眼前是什么类型的问题”的认知框架。它区分清晰、繁杂、复杂、混乱和无序五种情境。面对复杂情境，因果关系往往只能事后看清，因此更适合先做安全可控的小实验，再根据反馈调整，而不是一开始就寻找唯一正确答案。',
+          background:'由 Dave Snowden 在 IBM 工作期间逐步发展，名称来自威尔士语，强调人的判断会受到经历、关系和所处环境影响。',
+          application:'全新保险产品缺少历史经验，题干更接近“复杂”情境；小范围尝试、持续感知反馈并及时回应，通常比一次性制定完整方案更有效。',
+          stages:['清晰：感知—分类—回应','繁杂：感知—分析—回应','复杂：试探—感知—回应','混乱：行动—感知—回应','无序：先判断所属情境']
+        },
+        diamond:{
+          title:'双钻模型（Double Diamond）',
+          meaning:'双钻把解决问题的过程分成“发散—收敛—再发散—再收敛”。四个阶段是发现、定义、发展和交付：先广泛理解现状，再明确真正的问题；随后探索多种方案，最后验证并落实较合适的方案。',
+          background:'由英国 Design Council 在 2005 年系统化发布，用于说明设计与创新过程中反复探索和聚焦的节奏。',
+          application:'“用 AI 做需求文档”已经带有解决方案倾向。本题提醒团队先理解现有流程与真实痛点，再决定 AI 应该介入哪里、如何试点和评估。',
+          stages:['Discover · 发现','Define · 定义','Develop · 发展','Deliver · 交付']
+        }
+      };
+      const t=theories[kind];
+      el.innerHTML=`<aside class="theory" aria-label="${t.title}说明"><div class="theory-title">${t.title}</div><p class="theory-copy"><span class="theory-label">含义：</span>${t.meaning}</p><div class="diagram">${t.stages.map(x=>`<span>${x}</span>`).join('')}</div><p class="theory-context"><span class="theory-label">背景：</span>${t.background}<br><span class="theory-label">放在这道题里：</span>${t.application}</p></aside>`
+    }
+    function calc(ans){const s={A:0,B:0,C:0,D:0,E:0};ans.forEach((v,i)=>{if(v==null)return;const o=Q[i][1][v];s[o[1]]+=2;s[o[2]]+=1});const order=Object.keys(s).sort((a,b)=>s[b]-s[a]);return {scores:s,primary:order[0],secondary:order[1]}}
+    function finish(){persist();const all=load(),r=calc(answers);all[person]={...(all[person]||{}),answers,result:r,submittedAt:Date.now()};saveAll(all);renderResult(person)}
+    function bars(scores){const max=Math.max(...Object.values(scores),1);return Object.entries(scores).map(([k,v])=>`<div class="score-row"><span>${TYPES[k].short}</span><div class="bar"><i style="width:${v/max*100}%"></i></div><b>${v}</b></div>`).join('')}
+    function renderResult(n){const d=load()[n];if(!d?.result){startQuiz(n);return}const r=d.result,p=TYPES[r.primary],s=TYPES[r.secondary];$('#resultView').innerHTML=`<div class="eyebrow">Your workstyle profile · ${n}</div><div class="result-hero"><div><span class="type-badge">${p.tag}</span><h1 class="result-title">${p.name}<br>× ${s.name}</h1><p class="result-sub">你的主要倾向是「${p.short}」，其次是「${s.short}」。MBTI 趣味联想：${p.mbti}。这是一份工作偏好画像，不是人格诊断。</p></div><div class="radar">${bars(r.scores)}</div></div><div class="insights"><div class="insight"><h3>你的优势</h3><p>${p.strength}。</p></div><div class="insight"><h3>可能的盲点</h3><p>${p.blind}。</p></div><div class="insight"><h3>协作建议</h3><p>${p.advice}</p></div></div><div class="result-actions"><button class="btn btn-primary" id="toTeam">查看团队结果</button><button class="btn btn-secondary" id="redo">重新作答</button><button class="btn btn-ghost" id="resultHome">返回首页</button></div>`;show('resultView');$('#toTeam').onclick=()=>renderTeam(false);$('#redo').onclick=()=>{const all=load();delete all[n];saveAll(all);startQuiz(n)};$('#resultHome').onclick=renderHome}
+    function teamCards(){const all=load();return PEOPLE.map(n=>{const d=all[n],done=!!d?.result;if(!done)return `<div class="team-card"><div class="team-top"><b>${n}</b><span class="status">${d?.answers?.some(Boolean)?'作答中':'等待作答'}</span></div><p class="section-copy" style="margin:14px 0 0">结果提交后显示工作风格。</p></div>`;const p=TYPES[d.result.primary];return `<div class="team-card"><div class="team-top"><b>${n} · ${p.name}</b><span class="status done">已提交</span></div><p style="color:var(--muted);font-size:13px;line-height:1.5">优势：${p.strength}<br>建议：${p.advice}</p><div class="mini-scores">${Object.entries(d.result.scores).map(([k,v])=>`<span style="height:${25+v*2}px">${TYPES[k].short}</span>`).join('')}</div></div>`}).join('')}
+    function renderTeam(fromHost){$('#teamView').innerHTML=`<div class="eyebrow">Team discovery</div><h1 class="dashboard-title">团队工作风格</h1><p class="section-copy">仅展示已提交成员的类型、五维得分、优势和协作建议，不展示逐题答案。</p><div class="team-grid">${teamCards()}</div><div class="result-actions"><button class="btn btn-primary" id="teamChallenge">进入合作挑战</button><button class="btn btn-secondary" id="refreshTeam">刷新结果</button><button class="btn btn-ghost" id="teamBack">${fromHost?'返回主持台':'返回首页'}</button></div>`;show('teamView');$('#teamChallenge').onclick=()=>renderChallenge(fromHost);$('#refreshTeam').onclick=()=>renderTeam(fromHost);$('#teamBack').onclick=()=>fromHost?renderHost():renderHome()}
+    function bestPair(){const all=load(),done=PEOPLE.filter(n=>all[n]?.result);if(done.length<2)return done;let best=[done[0],done[1]],score=-1;for(let i=0;i<done.length;i++)for(let j=i+1;j<done.length;j++){const a=all[done[i]].result.scores,b=all[done[j]].result.scores;const v=Object.keys(a).reduce((x,k)=>x+Math.abs(a[k]-b[k]),0);if(v>score){score=v;best=[done[i],done[j]]}}return best}
+    function renderChallenge(fromHost){const pair=bestPair(),all=load();let body;if(pair.length<2)body='<p>至少需要两位成员提交结果后，才能生成现场搭档建议。</p>';else{const [a,b]=pair,ta=TYPES[all[a].result.primary],tb=TYPES[all[b].result.primary];body=`<div class="pair"><span>${a} · ${ta.name}</span><span>${b} · ${tb.name}</span></div><p><b>推荐分工：</b>${a} 发挥「${ta.strength}」的优势；${b} 发挥「${tb.strength}」的优势。两人用 8 分钟制定上线判断：先写出共同事实，再明确风险边界、负责人和下一步。</p><p><b>讨论问题：</b>当分析还没结束，但客户要求立即决定是否上线时，你们怎样兼顾判断质量与推进速度？</p>`}$('#challengeView').innerHTML=`<div class="challenge"><div class="eyebrow">Collaboration mission</div><h2>UAT 发现高风险缺陷，<br>上线日期不能轻易改变。</h2>${body}<button class="btn btn-primary" id="challengeBack">${fromHost?'返回主持台':'返回团队结果'}</button></div>`;show('challengeView');$('#challengeBack').onclick=()=>fromHost?renderHost():renderTeam(false)}
+    function progress(){const all=load();let done=0,doing=0;PEOPLE.forEach(n=>{if(all[n]?.result)done++;else if(all[n]?.answers?.some(Boolean))doing++});return {done,doing,waiting:PEOPLE.length-done-doing}}
+    function renderHost(){if(!hostUnlocked){renderHome();return}const p=progress(),wan=statusFor('万');$('#hostView').innerHTML=`<div class="dashboard-head"><div><div class="eyebrow">Facilitator · 万</div><h1 class="dashboard-title">主持人控制台</h1><p class="section-copy">投屏时可在这里查看现场节奏；万的个人答题独立保存。</p></div><button class="btn btn-ghost" id="lockHost">退出主持台</button></div><div class="metrics"><div class="metric"><strong>${p.done}</strong><span>已提交</span></div><div class="metric"><strong>${p.doing}</strong><span>进行中</span></div><div class="metric"><strong>${p.waiting}</strong><span>未开始 / 缺席</span></div></div><div class="quick-actions"><button class="action-card" id="wanQuiz"><span class="icon">↩</span><h3>返回万的答题</h3><p>${wan} · 进度会自动保存</p></button><button class="action-card" id="hostProgress"><span class="icon">◷</span><h3>查看 / 刷新进度</h3><p>更新六位成员的完成状态</p></button><button class="action-card" id="hostTeam"><span class="icon">◎</span><h3>展示团队结果</h3><p>投屏展示类型、五维得分和协作建议</p></button><button class="action-card" id="hostChallenge"><span class="icon">◇</span><h3>开始合作挑战</h3><p>根据已提交结果生成推荐搭档</p></button></div><div class="result-actions"><button class="btn btn-ghost btn-danger" id="clearAllAnswers">清除所有人作答</button></div><div class="security-note">提示：前端暗号只是隐藏入口，不是安全认证。任何能查看网页源代码的人都可能找到暗号；正式公开版本需要服务端权限控制。</div>`;show('hostView');$('#wanQuiz').onclick=()=>{const d=load()['万'];d?.result?renderResult('万'):startQuiz('万')};$('#hostProgress').onclick=()=>{renderHost();toast('进度已刷新')};$('#hostTeam').onclick=()=>renderTeam(true);$('#hostChallenge').onclick=()=>renderChallenge(true);$('#clearAllAnswers').onclick=clearAllAnswers;$('#lockHost').onclick=()=>{hostUnlocked=false;sessionStorage.removeItem('ba-host');renderHome();toast('已退出主持台')}}
+    function resetQuizState(){
+      person=null;
+      index=0;
+      answers=[];
+    }
+    function clearAllAnswers(){
+      if(!hostUnlocked)return;
+      if(!confirm('确定清除当前浏览器中所有人的答题进度和已提交结果？清除后无法恢复。'))return;
+      localStorage.removeItem(answerStorageKey);
+      resetQuizState();
+      renderHost();
+      toast('已清除所有人的作答和结果');
+    }
+    window.addEventListener('storage',event=>{
+      if(event.storageArea!==localStorage||event.key!==answerStorageKey||event.newValue!==null)return;
+      resetQuizState();
+      if(!$('#hostView').classList.contains('hidden'))renderHost();
+      else renderHome();
+    });
+    $('#quizHome').onclick=()=>{persist();renderHome()};$('#prevBtn').onclick=()=>{if(index>0){index--;renderQuestion()}};$('#nextBtn').onclick=()=>{if(answers[index]==null)return;if(index<Q.length-1){index++;renderQuestion()}else finish()};
+    $('#versionTrigger').onclick=()=>{const now=Date.now();clicks=clicks.filter(t=>now-t<3200);clicks.push(now);if(clicks.length>=5){clicks=[];$('#codeModal').classList.remove('hidden');setTimeout(()=>$('#codeInput').focus(),30)}};
+    $('#cancelCode').onclick=()=>{$('#codeModal').classList.add('hidden');$('#codeInput').value='';$('#codeError').textContent=''};
+    $('#codeModal').onclick=e=>{if(e.target===$('#codeModal'))$('#cancelCode').click()};
+    $('#codeForm').onsubmit=e=>{e.preventDefault();if($('#codeInput').value.trim().toUpperCase()==='BA'){hostUnlocked=true;sessionStorage.setItem('ba-host','1');$('#cancelCode').click();renderHost()}else{$('#codeError').textContent='暗号不正确，请重试。';$('#codeInput').select()}};
+    renderHome();
+  })();
+  </script>
+</body>
+</html>
